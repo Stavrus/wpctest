@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  test:
+    build:
+      context: .
+    environment:
+      - PORT=3000
+    ports:
+      - 8082:3000
+      - 9242:9242
+    volumes:
+      - ./server/src:/app/server/src
+      - ./web/config:/app/web/config
+      - ./web/src:/app/web/src
